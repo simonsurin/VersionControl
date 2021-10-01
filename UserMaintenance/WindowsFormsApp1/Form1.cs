@@ -52,5 +52,12 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var delete = listUsers.SelectedItem;
+            if (delete != null)
+                users.Remove((User)delete);
+        }
     }
 }

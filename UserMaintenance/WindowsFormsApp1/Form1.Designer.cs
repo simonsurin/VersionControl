@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUsers
@@ -75,15 +76,26 @@ namespace WindowsFormsApp1
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(185, 40);
             this.btnWrite.TabIndex = 6;
-            this.btnWrite.Text = "button1";
+            this.btnWrite.Text = "button2";
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(193, 194);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(185, 44);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "button3";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 259);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblFullName);
@@ -103,6 +115,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
