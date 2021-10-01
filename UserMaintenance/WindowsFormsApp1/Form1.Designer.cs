@@ -33,6 +33,7 @@ namespace WindowsFormsApp1
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnWrite = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUsers
@@ -45,9 +46,9 @@ namespace WindowsFormsApp1
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(231, 12);
+            this.txtFullName.Location = new System.Drawing.Point(251, 12);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(147, 20);
+            this.txtFullName.Size = new System.Drawing.Size(127, 20);
             this.txtFullName.TabIndex = 1;
             // 
             // lblFullName
@@ -68,11 +69,22 @@ namespace WindowsFormsApp1
             this.btnAdd.Text = "button1";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
+            // btnWrite
+            // 
+            this.btnWrite.Location = new System.Drawing.Point(193, 137);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(185, 40);
+            this.btnWrite.TabIndex = 6;
+            this.btnWrite.Text = "button1";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 259);
+            this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.txtFullName);
@@ -90,6 +102,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnWrite;
     }
 }
 
