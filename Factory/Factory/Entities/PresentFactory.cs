@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Factory.Entities
 {
-    public class BallFactory : IToyFactory
+    public class PresentFactory : IToyFactory
     {
-        public Color BallColor { get; set; }
+        public Color WrapColor { get; set; }
+        public Color RibbonColor { get; set; }
         public Toy CreateNew()
         {
-            return new Ball(BallColor);
+            return new Present(WrapColor, RibbonColor);
         }
     }
 }
