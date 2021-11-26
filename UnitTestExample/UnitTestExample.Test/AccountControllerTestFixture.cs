@@ -28,5 +28,24 @@ namespace UnitTestExample.Test
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [
+            Test,
+            TestCase("Abcdefgh", false),
+            TestCase("ABCDEFG1", false),
+            TestCase("abcdefg1", false),
+            TestCase("Abcdef1", false),
+            TestCase("Abcdefg1", true)
+        ]
+        public void TestValidatePassword(string password, bool expectedResult)
+        {
+            /// Arrange
+            var accountController = new AccountController();
+
+            // Act
+            var actualResult = accountController.ValidatePassword(password);
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
