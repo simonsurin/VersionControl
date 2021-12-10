@@ -23,8 +23,11 @@ namespace Evolution
         {
             InitializeComponent();
 
+            label1.BringToFront();
+
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
+            gc.GameOver += Gc_GameOver;
 
             for (int i = 0; i < populationSize; i++)
             {
@@ -32,6 +35,19 @@ namespace Evolution
             }
 
             gc.Start();
+        }
+
+        private void Gc_GameOver(object sender)
+        {
+            generation++;
+            label1.Text = string.Format(
+                "{0}. generáció",
+                generation);
+
+            var playerList = from p in gc.GetCurrentPlayers()
+                             orderby p.GetFitness() descending
+                             select p;
+            var topPerformers = playerList.Take(populationSize / 2).ToList();
         }
     }
 }
