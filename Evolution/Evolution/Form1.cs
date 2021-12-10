@@ -15,10 +15,12 @@ namespace Evolution
     {
         GameController gc = new GameController();
         GameArea ga;
+        Brain winnerBrain = null;
         int populationSize = 100;
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
+
         public Form1()
         {
             InitializeComponent();
@@ -49,6 +51,16 @@ namespace Evolution
                              select p;
             var topPerformers = playerList.Take(populationSize / 2).ToList();
 
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
             {
@@ -63,6 +75,7 @@ namespace Evolution
                 else
                     gc.AddPlayer(b.Mutate());
             }
+
             gc.Start();
         }
     }
